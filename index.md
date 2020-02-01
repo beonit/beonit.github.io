@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-nav_order: 1
+nav_order: 0
 description: "CV"
 permalink: /
 last_modified_date: 2020-04-27T17:54:08+0000
@@ -13,7 +13,7 @@ last_modified_date: 2020-04-27T17:54:08+0000
 Samsung PAY Server Engineer
 {: .fs-6 .fw-300 }
 
-[Linked in](#https://www.linkedin.com/in/seunghan-lee/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [Bright todo](https://play.google.com/store/apps/details?id=com.obplanner&hl=ko){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Linked in](https://www.linkedin.com/in/seunghan-lee/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [Bright todo](https://play.google.com/store/apps/details?id=com.obplanner&hl=ko){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -25,5 +25,3 @@ Samsung PAY Server Engineer
 ## Bright to do
 
 - For productivity people
-
-

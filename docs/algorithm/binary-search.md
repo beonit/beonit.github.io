@@ -2,6 +2,7 @@
 layout: default
 title: Binary search
 parent: Algorithm
+order: 3
 ---
 
 # Binary Search

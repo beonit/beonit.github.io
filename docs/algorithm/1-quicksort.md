@@ -2,8 +2,11 @@
 layout: default
 title: Quick sort
 parent: Algorithm
-order: 1
+nav_order: 1
+date: 2020-01-31 23:00
 ---
+
+{{page.date}}
 
 # Quick sort
 

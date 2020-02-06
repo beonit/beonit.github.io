@@ -2,10 +2,14 @@
 layout: default
 title: Binary search
 parent: Algorithm
-order: 3
+nav_order: 3
+date: 2020-02-01 23:25
 ---
 
+{{page.date}}
+
 # Binary Search
+
 
 바이너리 서치는 매우 효율 적이고, 이해하기도 쉽기 때문에 많은 자료구조, 알고리즘 서적의 처음에 등장한다. 구현은 매우 간단하다. 하지만 종종 실수한다. 바이너리 서치와 비슷한 bisect 구현도 추가한다.  
 

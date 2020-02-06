@@ -2,19 +2,23 @@
 layout: default
 title: Merge sort
 parent: Algorithm
-order: 4
+nav_order: 4
+date: 2020-02-05 23:00
 ---
+
+{{page.date}}
+
 
 # Merge sort
 
 알고리즘 강의를 들으며 시간 복잡도 까지 계산하여 더 정확하게 알게 되었다.  
 평소 space complexity 가 O(n) 인 [in-place merge sort](https://www.geeksforgeeks.org/in-place-merge-sort/) 를 나는 즐겨 사용하고 있었는데, 시간 복잡도가 높아지고 구현이 복잡해 져서 이득이 별로 없었다는걸 알게 됐다.  
-변형된 문제 풀이로 자신보다 작은 숫자가 앞에 몇개나 있는지 세는 문제 풀이도 들었다. leetcode 에서 봤었던 [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) 를 이해하게 됐다.
+변형된 문제 풀이로 자신보다 작은 숫자가 앞에 몇개나 있는지 세는 문제 풀이도 들었다. leetcode 에서 봤었던 문제다. [Count of Smaller Numbers After Self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/)
 
 
-## 시간 복잡도 증명
+## 시간 복잡도 계산
 
-![Image Alt 텍스트](/assets/images/algorithm/mergesort/proof.png)
+![시간 복잡도 계산](/assets/images/algorithm/mergesort/proof.png)
 
 
 ## Merge sort

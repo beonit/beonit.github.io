@@ -2,8 +2,11 @@
 layout: default
 title: Heap
 parent: Algorithm
-order: 2
+nav_order: 2
+date: 2020-02-01 23:00
 ---
+
+{{page.date}}
 
 # Heap
 

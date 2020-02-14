@@ -22,12 +22,12 @@ date : 2020-02-05
 ## 관심 문제
 
 - anagram 찾기
-- 연결리스트에서 cycle 찾기 (Disjoint Set (Or Union-Find))
 - 최대 subarray 찾기
-- 하노이 타워
+- [하노이 타워]({% link docs/problem-solving/recursion.md %})
 - B-Tree insert and next smallest
-- Root 찾는 알고리즘
-- 다익스트라 알고리즘
+- 연결리스트에서 cycle 찾기 (Disjoint Set (Or Union-Find))
+- [Union find]({% link docs/algorithm/union-find.md %})
+- [다익스트라 알고리즘]({% link docs/algorithm/dijkstra.md %})
 
 ## Binary search tree
 

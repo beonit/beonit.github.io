@@ -27,7 +27,7 @@ def hanoi(n, x, y, z):
 hanoi(3, "A", "C", "B")
 ```
 
-```bash
+```plain
 1 A -> C
 2 A -> B
 1 C -> B

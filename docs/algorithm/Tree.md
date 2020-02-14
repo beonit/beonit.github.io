@@ -2,7 +2,6 @@
 layout: default
 title: Tree
 parent: Algorithm
-nav_order: 4
 date: 2020-02-07 23:00
 ---
 

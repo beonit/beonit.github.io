@@ -2,7 +2,6 @@
 layout: default
 title: Binary search
 parent: Algorithm
-nav_order: 3
 date: 2020-02-01 23:25
 ---
 

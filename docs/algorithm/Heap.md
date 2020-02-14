@@ -2,7 +2,6 @@
 layout: default
 title: Heap
 parent: Algorithm
-nav_order: 2
 date: 2020-02-01 23:00
 ---
 

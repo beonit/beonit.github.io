@@ -1,11 +1,9 @@
 ---
 layout: default
 title: Maximum subarray
-parent: Problem
+parent: Problem Solving
 nav_order: 3
-date: 2020-02-06 11:00
+date: 2020-02-06
 ---
-
-{{page.date}}
 
 # Two sum

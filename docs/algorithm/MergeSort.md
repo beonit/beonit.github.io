@@ -2,7 +2,6 @@
 layout: default
 title: Merge sort
 parent: Algorithm
-nav_order: 4
 date: 2020-02-05 23:00
 ---
 

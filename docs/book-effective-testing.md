@@ -8,9 +8,11 @@ permalink: /docs/effective-testing
 
 # Effective testing
 
+- 기간 : 2020-12-?? ~ 2020-01-??
+
 ![](https://image.aladin.co.kr/product/3295/32/cover500/8968480621_1.jpg)
 
-[Effective unit testing](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=32953284)
+[Effective unit testing - 알라딘](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=32953284)
 {: .fs-6 .fw-300 }
 
 절판된 책을 웃돈 주고 사서 읽었다. 책의 내용은 과연 웃돈주고 사도 될 만큼 유용하고 가치 있었다. 팀사람들에게 내가 지금까지 해왔던 학습과 작업들이 틀리지 않았음을 알게 해주었다.  

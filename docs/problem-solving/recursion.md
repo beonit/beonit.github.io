@@ -1,12 +1,9 @@
 ---
 layout: default
-title: Recursion
-parent: Problem
-nav_order: 1
+title: Simple recursion
+parent: Problem Solving
 date: 2020-02-06 11:00
 ---
-
-{{page.date}}
 
 
 # Recursion
@@ -15,7 +12,7 @@ date: 2020-02-06 11:00
 
 ## Hanoi tower
 
-recursion 을 이해하는 첫번째 문제. x, z, y 의 위치가 좀 혼란 스럽다.
+recursion 을 이해하는 첫번째 문제. 언제나 x, z, y 의 위치가 좀 혼란 스럽다. from, to, tmp 로 바꾸면 좀 나을텐데
 
 ### Code
 

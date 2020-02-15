@@ -3,6 +3,7 @@ layout: default
 title: Computational Geometry
 parent: Algorithm theory
 date : 2020-02-12
+nav_order: 99
 ---
 
 # 계산 기하학

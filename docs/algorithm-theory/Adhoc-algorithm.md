@@ -3,6 +3,7 @@ layout: default
 title: Adhoc algorithm
 parent: Algorithm theory
 date : 2020-02-05
+nav_order: 99
 ---
 
 ## 문제

@@ -3,6 +3,7 @@ layout: default
 title: Dynamic programming
 parent: Algorithm theory
 date : 2020-02-11
+nav_order: 99
 ---
 
 ## 1차원

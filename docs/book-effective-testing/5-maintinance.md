@@ -2,7 +2,7 @@
 layout: default
 title: 유지보수성
 parent: Effective unit testing
-order: 5
+nav_order: 5
 ---
 
 # 유지보수성

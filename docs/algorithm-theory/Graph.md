@@ -3,6 +3,7 @@ layout: default
 title: Graph
 parent: Algorithm theory
 date : 2020-02-06
+nav_order: 99
 ---
 
 ## 그래프 이론

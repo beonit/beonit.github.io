@@ -2,7 +2,7 @@
 layout: default
 title: 신뢰성
 parent: Effective unit testing
-order: 6
+nav_order: 6
 ---
 
 # 신뢰성

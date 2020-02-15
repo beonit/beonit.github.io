@@ -2,7 +2,7 @@
 layout: default
 title: 제2의 JVM 언어
 parent: Effective unit testing
-order: 8
+nav_order: 8
 ---
 
 # 제2의 JVM 언어

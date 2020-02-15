@@ -3,6 +3,7 @@ layout: default
 title: String
 parent: Algorithm theory
 date : 2020-02-10
+nav_order: 99
 ---
 
 ## 나이브 매칭

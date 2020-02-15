@@ -3,6 +3,7 @@ layout: default
 title: Descrete mathematics
 parent: Algorithm theory
 date : 2020-02-07
+nav_order: 99
 ---
 
 ## 이산 수학

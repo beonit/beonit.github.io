@@ -2,7 +2,7 @@
 layout: default
 title: 빌드/테스트 속도 빠르게 하기
 parent: Effective unit testing
-order: 9
+nav_order: 9
 ---
 
 # 빌드/테스트 속도 빠르게 하기

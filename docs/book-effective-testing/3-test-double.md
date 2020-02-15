@@ -2,7 +2,7 @@
 layout: default
 title: 테스트 더블
 parent: Effective unit testing
-order: 3
+nav_order: 3
 ---
 
 # 테스트 더블

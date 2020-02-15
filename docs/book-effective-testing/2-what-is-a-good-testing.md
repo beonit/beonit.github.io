@@ -2,7 +2,7 @@
 layout: default
 title: 좋은 테스트란 무엇인가?
 parent: Effective unit testing
-order: 2
+nav_order: 2
 ---
 
 # 좋은 테스트란 무엇인가?

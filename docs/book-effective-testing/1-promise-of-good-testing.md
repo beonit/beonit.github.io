@@ -2,7 +2,7 @@
 layout: default
 title: 좋은 테스트의 약속
 parent: Effective unit testing
-order: 1
+nav_order: 1
 ---
 
 # 좋은 테스트의 약속

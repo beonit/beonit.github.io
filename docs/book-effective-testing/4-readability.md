@@ -2,7 +2,7 @@
 layout: default
 title: 가독성
 parent: Effective unit testing
-order: 4
+nav_order: 4
 ---
 
 # 가독성

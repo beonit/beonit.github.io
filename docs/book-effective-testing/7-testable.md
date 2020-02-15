@@ -2,7 +2,7 @@
 layout: default
 title: 테스트 가능 설계
 parent: Effective unit testing
-order: 7
+nav_order: 7
 ---
 
 # 테스트 가능 설계

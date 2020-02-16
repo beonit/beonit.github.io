@@ -2,7 +2,7 @@
 layout: default
 title: Longest Substring Without Repeating Characters
 parent: Leetcode
-date: 2020-02-15
+date: 2020-02-15 00:00
 ---
 
 # Longest Substring Without Repeating Characters

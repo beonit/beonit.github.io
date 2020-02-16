@@ -2,7 +2,7 @@
 layout: default
 title: Merge k Sorted Lists
 parent: Leetcode
-date: 2020-02-16
+date: 2020-02-16 00:00
 ---
 
 # Merge k Sorted Lists

@@ -2,7 +2,7 @@
 layout: default
 title: Longest Palindromic Substring
 parent: Leetcode
-date: 2020-02-15
+date: 2020-02-15 00:00
 ---
 
 # Longest Palindromic Substring

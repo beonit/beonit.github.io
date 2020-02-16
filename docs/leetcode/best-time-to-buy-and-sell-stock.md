@@ -2,7 +2,7 @@
 layout: default
 title: Best Time to Buy and Sell Stock
 parent: Leetcode
-date: 2020-02-15 23:00 +0900
+date: 2020-02-15
 ---
 
 # Best Time to Buy and Sell Stock

@@ -3,7 +3,7 @@ layout: default
 title: Solving club
 parent: Problem Solving
 nav_order: 1
-date: 2020-02-14 23:00 +0900
+date: 2020-02-14
 ---
 
 ## 20년 2월 회사 문제 풀이 교육

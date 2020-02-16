@@ -1,8 +1,8 @@
 ---
 layout: default
 title: vscode
-parent: tools
-date: 2020-02-15 23:00 +0900
+parent: Tools
+date: 2020-02-15
 ---
 
 ## vscode
@@ -37,3 +37,7 @@ date: 2020-02-15 23:00 +0900
   - Stop debug : `shift f5`
   - Next over : `f10`
   - Step into : `f11`
+- Search & Navigation
+  - Next occurrence : `F4`
+  - Go to file : `Cmd+p`
+  - Go to project explorer : `Cmd+0`

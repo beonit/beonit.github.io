@@ -2,7 +2,7 @@
 layout: default
 title: KMP
 parent: Algorithm
-date: 2020-02-12 23:00 +0900
+date: 2020-02-12
 ---
 
 # KMP

@@ -2,7 +2,7 @@
 layout: default
 title: Convex-hull
 parent: Algorithm
-date: 2020-02-14 23:00 +0900
+date: 2020-02-14
 ---
 
 ## Jarvis match algorithm

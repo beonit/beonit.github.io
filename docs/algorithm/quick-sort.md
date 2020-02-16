@@ -2,7 +2,7 @@
 layout: default
 title: Quick sort
 parent: Algorithm
-date: 2020-01-31 23:00 +0900
+date: 2020-01-31
 ---
 
 {{page.date}}

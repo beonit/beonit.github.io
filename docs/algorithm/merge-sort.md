@@ -2,7 +2,7 @@
 layout: default
 title: Merge sort
 parent: Algorithm
-date: 2020-02-05 23:00
+date: 2020-02-05 23:00 +0900
 ---
 
 {{page.date}}

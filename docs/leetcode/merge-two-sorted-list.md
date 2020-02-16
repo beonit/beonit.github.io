@@ -2,7 +2,7 @@
 layout: default
 title: Merge Two Sorted Lists
 parent: Leetcode
-date: 2020-02-16 00:00
+date: 2020-02-16 23:00 +0900
 ---
 
 # Merge Two Sorted Lists

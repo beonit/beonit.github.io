@@ -2,7 +2,7 @@
 layout: default
 title: Add Two Numbers
 parent: Leetcode
-date: 2020-02-15 00:00
+date: 2020-02-15 23:00 +0900
 ---
 
 # Add Two Numbers

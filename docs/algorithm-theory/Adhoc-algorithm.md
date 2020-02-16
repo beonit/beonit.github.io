@@ -24,11 +24,11 @@ nav_order: 99
 
 - anagram 찾기
 - 최대 subarray 찾기
-- [하노이 타워]({% link docs/problem-solving/recursion.md %})
+- 하노이 타워
 - B-Tree insert and next smallest
 - 연결리스트에서 cycle 찾기 (Disjoint Set (Or Union-Find))
-- [Union find]({% link docs/algorithm/union-find.md %})
-- [다익스트라 알고리즘]({% link docs/algorithm/dijkstra.md %})
+- Union find
+- 다익스트라 알고리즘
 
 ## Binary search tree
 

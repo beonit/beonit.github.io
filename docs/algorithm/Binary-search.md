@@ -2,7 +2,7 @@
 layout: default
 title: Binary search
 parent: Algorithm
-date: 2020-02-01 23:25
+date: 2020-02-01T00:00:00+09:00
 ---
 
 {{page.date}}

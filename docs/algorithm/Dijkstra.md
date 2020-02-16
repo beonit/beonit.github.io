@@ -2,7 +2,7 @@
 layout: default
 title: Dijkstra
 parent: Algorithm
-date: 2020-02-12
+date: 2020-02-12 00:00
 ---
 
 # Dijkstra

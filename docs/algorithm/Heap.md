@@ -81,5 +81,4 @@ for _ in range(100):
     while heap:
         sortedArr.append(heapq.heappop(heap))
     assert sorted(arr) == sortedArr
-
 ```

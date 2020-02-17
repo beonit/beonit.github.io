@@ -5,6 +5,8 @@ parent: Tools
 date: 2020-02-15
 ---
 
+# Visual Studio Code
+
 ## vscode
 - Ubuntu 에서 실행시 pac 설정 방법
   1. `/usr/share/applications/code.desktop` 의 실행 명령어 수정 필요.

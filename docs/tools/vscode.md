@@ -8,12 +8,14 @@ date: 2020-02-15
 # Visual Studio Code
 
 ## vscode
+
 - Ubuntu 에서 실행시 pac 설정 방법
   1. `/usr/share/applications/code.desktop` 의 실행 명령어 수정 필요.
   2. `Exec=/usr/share/code/code --unity-launch --proxy-pac-url=http://swp.sec.samsung.net:8088/samsungcs.pac --ignore-certificate-errors %F`
 - F1 이 꿀 단축키다
 
 ## Python
+
 - Python 코딩하기 좋다.
 - 추천 설정이 되어 있지 않으면 감지해서 플러그인을 설치 하도록 유도한다.
 - PIP, PEP8, LINT 등을 설치 유도한다.
@@ -30,7 +32,7 @@ date: 2020-02-15
   - On Mac : `Shift + Option + F`
   - On Ubuntu : `Ctrl + Shift + I`
 - Terminal
-  - To Focus on Integrated Terminal : ``` ctrl+` ```
+  - To Focus on Integrated Terminal : ```ctrl+` ```
   - To Focus on Editor : `ctrl+1~9`
   - Show/Hide bottom pannel : `ctrl-j`
 - Debug

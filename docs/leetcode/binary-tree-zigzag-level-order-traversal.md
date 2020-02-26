@@ -5,7 +5,7 @@ parent: Leetcode
 date: 2020-02-20
 ---
 
-# Title
+# Binary Tree Zigzag Level Order Traversal
 
 [leetcode/binary-tree-zigzag-level-order-traversal](https://www.leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 

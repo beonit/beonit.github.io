@@ -12,7 +12,8 @@ date: 2020-02-15
 - Ubuntu 에서 실행시 pac 설정 방법
   1. `/usr/share/applications/code.desktop` 의 실행 명령어 수정 필요.
   2. `Exec=/usr/share/code/code --unity-launch --proxy-pac-url=http://swp.sec.samsung.net:8088/samsungcs.pac --ignore-certificate-errors %F`
-- F1 이 꿀 단축키다
+- F1 이 JetBrain 의 Shift+Shift 의 역할을 한다.
+- 디렉토리를 워크 스페이스로 만들어서 사용한다. `{workspaceName}.code-workspace` 와 `.vscode` 디렉토리에 local 설정 파일을 생성한다.
 
 ## Python
 

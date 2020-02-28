@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Linux commands
+title: Git
 parent: Tools
 date: 2020-02-27
 ---

@@ -11,7 +11,7 @@ date: 2020-02-18
 
 `.ssh/config` 의 설정으로 가능하다.
 
-```txt
+```plain
 Host GW-SERVER
     Hostname {ipaddress}
     User {account}
@@ -32,9 +32,8 @@ Host DEST-SERVER
 
 - 키생성 : ```ssh-keygen -t rsa```
 
-### 외부 서버에 인증키 넣기
+## 외부 서버에 인증키 넣기
 
 ```bash
 cat ~/.ssh/id_rsa.pub | ssh userName@hostname -p22 'mkdir .ssh && touch ~/.ssh/authorized_keys && cat >> ~/.ssh/authorized_keys'
-echo "alias name='ssh user@hostname -p22'" >> .bashrc
 ```

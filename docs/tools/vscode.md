@@ -15,6 +15,10 @@ date: 2020-02-15
 - F1 이 JetBrain 의 Shift+Shift 의 역할을 한다.
 - 디렉토리를 워크 스페이스로 만들어서 사용한다. `{workspaceName}.code-workspace` 와 `.vscode` 디렉토리에 local 설정 파일을 생성한다.
 
+## Trouble shooting
+
+- [Ubuntu VSCode 한글 입력 문제 해결](https://blog.naver.com/doogle/220889604173) : `File -> Preferences -> Settings -> Text Editor -> Font -> Font Family` 에서 `Droid Sans Fallback` 을 제거한다.
+
 ## Python
 
 - Python 코딩하기 좋다.

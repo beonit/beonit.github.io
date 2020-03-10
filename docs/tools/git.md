@@ -27,6 +27,11 @@ date: 2020-02-27
 - `git branch -f master SHA-1` : 브랜치를 특정 commit 으로 강제로 옮긴다
 - `git branch -rd origin/17W33` : 로컬에서 트랙킹 중인 리모트 브랜치 정보를 지운다. (리모트에서 브랜치가 지워진건 아니다)
 
+### Delete Mereged branches
+
+- `git branch --merged | egrep -v "(^\*|release|develop)" | xargs git branch -d` : merge 된 브랜치 삭제
+- `git remote prune origin` : remote 에서 삭제된 브랜치 삭제
+
 ## 좋은 git 커밋 메시지를 작성하기 위한 8가지 약속
 
 - **본문은 어떻게보다 무엇을, 왜에 맞춰 작성하기**

@@ -58,6 +58,14 @@ docker run --rm --name spring-docker -p8080:8080 -d springio/gs-spring-boot-dock
     <groupId>com.spotify</groupId>
     <artifactId>dockerfile-maven-plugin</artifactId>
     <version>1.4.13</version>
+    <executions>
+        <execution>
+            <phase>install</phase>
+            <goals>
+                <goal>build</goal>
+            </goals>
+        </execution>
+    </executions>
     <configuration>
         <repository>${project.artifactId}/${project.name}</repository>
         <tag>${project.version}</tag>

@@ -10,11 +10,14 @@ date: 2020-02-19
 Spring boot 로 docker image 를 만드는 방법
 
 - How-to : [spring.io/spring-boot-docker](https://spring.io/guides/gs/spring-boot-docker/)
-- Guide : [Topical Guide on Spring Boot with Docker (more depth than this guide)](https://spring.io/guides/topicals/spring-boot-docker)
-- Reference
-  - [com.google.cloud.tools:jib](https://github.com/GoogleContainerTools/jib)
-  - [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin)
-  - [maven central](https://mvnrepository.com/artifact/com.google.cloud.tools/jib-maven-plugin)
+- Guide
+  - [Topical Guide on Spring Boot with Docker (more depth than this guide)](https://spring.io/guides/topicals/spring-boot-docker)
+    - Reference
+    - [com.google.cloud.tools:jib](https://github.com/GoogleContainerTools/jib)
+    - [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin)
+    - [maven central](https://mvnrepository.com/artifact/com.google.cloud.tools/jib-maven-plugin)
+  - [Spring dockerfile guide](https://spring.io/guides/gs/spring-boot-docker/)
+  - [Spotify:dockerfile](https://github.com/spotify/dockerfile-maven) - 복잡한 독커 파일을 처리하고 최적화 하는 용도로 이게 더 알맞아 보인다.
 
 1. Containerize It
 
@@ -36,31 +39,31 @@ docker build -t springio/gs-spring-boot-docker .
 docker run --rm --name spring-docker -p8080:8080 -d springio/gs-spring-boot-docker
 ```
 
-1. Build a Docker Image with Maven
+## Maven docker plugin
 
-- Run on command line
+- `com.google.cloud.tools:jib`
+  - 장점 : 매우 작고 빠르다.
+  - 단점 : dockerfile 을 사용하지 않는다.
+- `io.fabric8:docker-maven-plugin`
+  - 장점 : jib 와 spotify 를 결합 한것 같다.
+  - 단점 : dockerfile 만 실행 시키기도 참 어렵다.
+- `com.spotify:dockerfile`
+  - 장점 : 간단한 사용방법. Dockerfile 에 의존한다.
+  - 단점 : context root 를 설정하면 target 파일을 찾지 못한다.
 
-```bash
-mvn com.google.cloud.tools:jib-maven-plugin:dockerBuild -Dimage=springio/gs-spring-boot-docker
-```
-
-- Add plugin config to Pom.xml
+### Spotify dockerfile plugin
 
 ```xml
 <plugin>
-    <groupId>com.google.cloud.tools</groupId>
-    <artifactId>jib-maven-plugin</artifactId>
-    <version>2.0.0</version>
+    <groupId>com.spotify</groupId>
+    <artifactId>dockerfile-maven-plugin</artifactId>
+    <version>1.4.13</version>
     <configuration>
-        <to>
-            <image>springio/gs-spring-boot-docker</image>
-        </to>
+        <repository>${project.artifactId}/${project.name}</repository>
+        <tag>${project.version}</tag>
+        <buildArgs>
+            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+        </buildArgs>
     </configuration>
 </plugin>
-```
-
-- Build image using maven
-
-```bash
-mvn jib:dockerBuild
 ```

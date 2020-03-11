@@ -5,13 +5,43 @@ parent: Spring
 date: 2020-03-11
 ---
 
-## aa
+# Maven
+{: .no_toc }
 
-- Snapshot : `-snapshot` postfix 가 붙은 버전은 형상이 바뀔 수 있다. night build, canary 개념.
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+## BASIC
+
+- [maven 홈페이지](https://maven.apache.org/)
+- Maven 은 여러 플러그인을 구동시키는 엔진 역할을 한다. +Dependecy Mechanism
+- [Build Lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) - Maven 은 Lifecycle - phase - goal 로 이루어진다.
+  - A Build Lifecycle is Made Up of Phases
+  - A Build Phase is Made Up of Plugin Goals
 - Profile
   - 프로파일 기능을 이용하여 조건에 따라서 JDK 를 다른 버전으로 build 하거나 특정 환경에 맞게 packaging 가능
   - maven profile 은 환경마다 빌드를 새로 해야 하는 문제가 있으니 이것보다는 spring profile 이 권장됨
-- settings.xml 에 기술
+- settings.xml
+  - proxy 설정, auth 정보 등을 기술
+  - 명시 하지 않으면 관례적 경로를 따른다. `~/.m2/settings.xml`
+- Snapshot : `-snapshot` postfix 가 붙은 버전은 형상이 바뀔 수 있다. night build, canary 개념.
+
+### Command 의 구성
+
+- ```mvn clean dependency:copy-dependencies package```
+  - phase : `clean`, `dependency`, `package`
+  - goal : `copy-dependencies`
+
+- Command samples
+  - Skip test : `-Dmaven.test.skip=true`
+  - Check all snapshot update : `mvn -U`
+  - describe plugin : `plugin:describe`
+  - set profile : `mvn mygoal -P profile-1,profile-2`
 
 ## Maven parent pom vs modules pom
 
@@ -34,93 +64,6 @@ date: 2020-03-11
 - groupId, version 은 parent-pom 과 공유
 - 개별 모듈이 별도의 버전을 가질수 없음.
 
-## Mvn command
-
-### Command 의 구성
-
-- ```mvn clean dependency:copy-dependencies package```
-  - phase : `clean`, `dependency`, `package`
-  - goal : `copy-dependencies`
-
-### Command samples
-
-- Skip test : `-Dmaven.test.skip=true`
-- Check all snapshot update : `mvn -U`
-- describe plugin : `plugin:describe`
-- set profile : `mvn mygoal -P profile-1,profile-2`
-
-## Common default lifecycle phases
-
-- validate: validate the project is correct and all necessary information is available
-- compile: compile the source code of the project
-- test: test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed
-- package: take the compiled code and package it in its distributable format, such as a JAR.
-- integration-test: process and deploy the package if necessary into an environment where integration tests can be run
-- verify: run any checks to verify the package is valid and meets quality criteria
-- install: install the package into the local repository, for use as a dependency in other projects locally
-- deploy: done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects.
-- clean: cleans up artifacts created by prior builds
-- site: generates site documentation for this project
-
-## Repository
-
-- repository 에서 다운받는 artifact 는 ${M2_HOME} 환경 변수에 지정된 폴더에 저장된다.
-- ${M2_HOME} 가 지정되지 않았을 경우 ${user.home}/.m2/ 가 관례상 사용된다.
-
-- maven update policy
-  - always - always check when Maven is started for newer versions of snapshots
-  - never - never check for newer remote versions. Once off manual updates can be performed.
-  - daily (default) - check on the first run of the day (local time)
-  - interval:XXX - check every XXX minutes
-
-```xml
-<repository>
-    <snapshots>
-    <enabled>true</enabled>
-    <updatePolicy>always</updatePolicy>
-    <checksumPolicy>fail</checksumPolicy>
-    </snapshots>
-    <url>http://snapshots.maven.codehaus.org/maven2</url>
-    <layout>default</layout>
-</repository>
-```
-
-## Plugins
-
-### 대표 플러그인들
-
-- [Surefire](http://maven.apache.org/surefire/maven-surefire-plugin/) : The Surefire Plugin is used during the test phase of the build lifecycle to execute the unit tests of an application. It generates reports in 2 different file formats
-- [jacoco](https://www.eclemma.org/jacoco/trunk/doc/maven.html) : provides code coverage metrics for Java code via integration with JaCoCo.
-- [compiler](https://maven.apache.org/plugins/maven-compiler-plugin/) : The Compiler Plugin is used to compile the sources of your project.
-- [shade](Apache Maven Shade Plugin) : 의존성을 포함한 실행 가능한 single jar(uber-jar)
-
-### Spotify dockerfile
-
-- (Spotify dockerfile)https://github.com/spotify/dockerfile-maven
-
-```xml
-<plugin>
-    <groupId>com.spotify</groupId>
-    <artifactId>dockerfile-maven-plugin</artifactId>
-    <version>1.4.13</version>
-    <!-- execution phase 설정 -->
-    <executions>
-        <execution>
-            <phase>install</phase>
-            <goals>
-                <goal>build</goal>
-            </goals>
-        </execution>
-    </executions>
-    <configuration>
-        <repository>${project.artifactId}/${project.name}</repository>
-        <tag>${project.version}</tag>
-        <buildArgs>
-            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-        </buildArgs>
-    </configuration>
-</plugin>
-```
 
 ## Deploy artifact
 
@@ -156,4 +99,63 @@ date: 2020-03-11
     <password>passwd</password>
   </server>
 </servers>
+```
+
+## Repository
+
+- repository 에서 다운받는 artifact 는 ${M2_HOME} 환경 변수에 지정된 폴더에 저장된다.
+- ${M2_HOME} 가 지정되지 않았을 경우 ${user.home}/.m2/ 가 관례상 사용된다.
+
+- maven update policy
+  - always - always check when Maven is started for newer versions of snapshots
+  - never - never check for newer remote versions. Once off manual updates can be performed.
+  - daily (default) - check on the first run of the day (local time)
+  - interval:XXX - check every XXX minutes
+
+```xml
+<repository>
+    <snapshots>
+    <enabled>true</enabled>
+    <updatePolicy>always</updatePolicy>
+    <checksumPolicy>fail</checksumPolicy>
+    </snapshots>
+    <url>http://snapshots.maven.codehaus.org/maven2</url>
+    <layout>default</layout>
+</repository>
+```
+## Plugins
+
+### 대표 플러그인들
+
+- [Surefire](http://maven.apache.org/surefire/maven-surefire-plugin/) : The Surefire Plugin is used during the test phase of the build lifecycle to execute the unit tests of an application. It generates reports in 2 different file formats
+- [jacoco](https://www.eclemma.org/jacoco/trunk/doc/maven.html) : provides code coverage metrics for Java code via integration with JaCoCo.
+- [compiler](https://maven.apache.org/plugins/maven-compiler-plugin/) : The Compiler Plugin is used to compile the sources of your project.
+- [shade](Apache Maven Shade Plugin) : 의존성을 포함한 실행 가능한 single jar(uber-jar)
+
+### Spotify dockerfile
+
+- (Spotify dockerfile)https://github.com/spotify/dockerfile-maven
+
+```xml
+<plugin>
+    <groupId>com.spotify</groupId>
+    <artifactId>dockerfile-maven-plugin</artifactId>
+    <version>1.4.13</version>
+    <!-- execution phase 설정 -->
+    <executions>
+        <execution>
+            <phase>install</phase>
+            <goals>
+                <goal>build</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <repository>${project.artifactId}/${project.name}</repository>
+        <tag>${project.version}</tag>
+        <buildArgs>
+            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+        </buildArgs>
+    </configuration>
+</plugin>
 ```

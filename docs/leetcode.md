@@ -15,6 +15,7 @@ permalink: /docs/leetcode
 - ```sys.maxsize```
 
 - defaultdict
+
 ```python
 from collections import defaultdict
 shown = defaultdict(int)
@@ -23,6 +24,7 @@ shown = defaultdict(dict)
 ```
 
 - heapq
+
 ```python
 import heapq
 heapq.heapify(heap)
@@ -55,6 +57,5 @@ random.randint(a, b) # a <= N <= b
 
 ## Python 연산자의 시간 복잡도
 
-- [Complexity of Python Operations
-](https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt)
+- [Complexity of Python Operations](https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt)
   - 대체로 널리 알려진 시간 복잡도를 그대로 따르고 있다.

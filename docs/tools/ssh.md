@@ -37,3 +37,8 @@ Host DEST-SERVER
 ```bash
 cat ~/.ssh/id_rsa.pub | ssh userName@hostname -p22 'mkdir .ssh && touch ~/.ssh/authorized_keys && cat >> ~/.ssh/authorized_keys'
 ```
+
+## Warning/Welcom message 삭제
+
+- ssh config : `LogLevel QUIET`
+- `ssh host 'touch .hushlogin'`

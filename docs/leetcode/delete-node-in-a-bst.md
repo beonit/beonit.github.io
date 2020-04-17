@@ -3,7 +3,6 @@ layout: default
 title: Delete Node in a BST
 parent: Leetcode
 date: 2020-04-15
-published: false
 ---
 
 # Delete Node in a BST

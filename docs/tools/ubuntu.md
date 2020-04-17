@@ -5,4 +5,10 @@ parent: Tools
 date: 2020-04-13
 ---
 
-## 참조
+# Ubuntu
+
+## .desktop file
+
+- `~/.local/share/applications`
+- `/usr/share/applications`
+

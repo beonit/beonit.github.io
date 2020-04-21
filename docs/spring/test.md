@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Testing frameworks
+title: Test
 parent: Spring
 date: 2020-04-21
 ---

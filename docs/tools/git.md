@@ -13,6 +13,7 @@ date: 2020-02-27
 ## Git useful command
 
 - 이미 추가된 파일을 local 엔 남기고 저장소에서만 삭제하고 싶을 때 : `git rm -r --cached bin/`
+- 수정된 파일 리스트만 표시 : `git show --pretty="" --name-only 30e15fd5`
 
 ### Branch
 

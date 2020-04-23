@@ -65,6 +65,12 @@ date: 2020-03-11
 - 개별 모듈이 별도의 버전을 가질수 없음.
 
 
+## Jacoco
+
+- Unit test 산출물
+  - csv : target/site/jacoco/jacoco.csv (covered, missed 내용이 들어 있다)
+  - jacoco-exec : 바이너리 파일
+
 ## Dependency
 
 - Dependency Scope : [원본](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html) [한글](https://homo-ware.tistory.com/43)

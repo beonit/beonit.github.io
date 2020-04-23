@@ -7,9 +7,21 @@ date: 2020-02-19
 
 Best editor in the world.
 
+## 유용한 함수
+
+- 덮어쓰기 모드 : `overwrite-mode`
+- line-wrap 방지 : `toggle-truncate-lines`
+
+## find-grep-dired
+
+## replace-regexp
+
+- 문자열 전체를 매치 : `(replace-regexp "\\(.*\\)" "function-name \\1")`
+- 마지막 `.` 이후의 문자열을 분리 : `(replace-regexp "\\(.*\\)\\.\\([a-zA-Z]+\\)" "\\1 \\2")`
+
 ## .emacs
 
-```lisp
+```elisp
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.

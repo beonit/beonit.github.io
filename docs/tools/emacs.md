@@ -86,4 +86,12 @@ Best editor in the world.
 (helm-autoresize-mode 1)
 
 (add-to-list 'default-frame-alist '(font . "Monaco-10"))
+
+(load-theme 'zenburn t)
+
+;; /usr/share/applications/emacs.desktop
+;; Exec=env XMODIFIERS= emacs %F
+
+(add-to-list 'default-frame-alist '(font . "Monaco-10"))
+(set-fontset-font t 'hangul (font-spec :name "NanumGothicCoding"))
 ```

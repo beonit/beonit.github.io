@@ -39,6 +39,7 @@ date: 2020-03-11
 
 - Command samples
   - Skip test : `-Dmaven.test.skip=true`
+  - Build only sub project : `mvn -pl dir clean install`
   - Check all snapshot update : `mvn -U`
   - describe plugin : `plugin:describe`
   - set profile : `mvn mygoal -P profile-1,profile-2`

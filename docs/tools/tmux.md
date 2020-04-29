@@ -20,6 +20,14 @@ session:
 Detach from a session: `C-b d`.
 Rename session: `C-b $`.
 
+
+Switch between sessions:
+
+	C-b (          previous session
+	C-b )          next session
+	C-b L          ‘last’ (previously used) session
+	C-b s          choose a session from a list
+
 window:
 
     C-b c          create a new window
@@ -53,3 +61,6 @@ Resizing panes:
 - [Restore tmux session after reboot](https://superuser.com/a/615716)
   - `tmux-session save`, `tmux-session restore`
 
+## Start shell with tmux
+
+- [Start with tmux](https://unix.stackexchange.com/a/306165)

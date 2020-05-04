@@ -11,6 +11,14 @@ date: 2020-04-21
 - Functional test
 - Integration test
 - Unit test
+  
+## Test data
+
+- Generate mocking data
+  - [mockneat](https://github.com/nomemory/mockneat)
+  - [Faker](https://github.com/DiUS/java-faker)
+- Generate random data pojo : [PoDaM](http://mtedone.github.io/podam/)
+
 
 ## Testint frameworks
 

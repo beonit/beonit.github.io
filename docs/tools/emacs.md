@@ -18,6 +18,9 @@ Best editor in the world.
 
 - 문자열 전체를 매치 : `(replace-regexp "\\(.*\\)" "function-name \\1")`
 - 마지막 `.` 이후의 문자열을 분리 : `(replace-regexp "\\(.*\\)\\.\\([a-zA-Z]+\\)" "\\1 \\2")`
+- Kotlin vo to spock test : `(replace-regexp "\\(val\\|var\\) \\(.*\\):.*" "vo1.\\2 == vo2.\\2")`
+
+    
 
 ## .emacs
 

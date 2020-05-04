@@ -5,11 +5,11 @@ parent: Tools
 date: 2020-04-29
 ---
 
-## Tmux
-
-- [tmux cheat sheet](https://gist.github.com/andreyvit/2921703)
+# Tmux
 
 ## Shortcuts
+
+- [tmux cheat sheet](https://gist.github.com/andreyvit/2921703)
 
 session:
 

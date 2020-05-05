@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Docker and kubernetes the complete guide
+title: Docker study
+parent: Development
 ---
 
 

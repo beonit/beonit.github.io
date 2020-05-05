@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Docker
-parent: Spring
+parent: Development
 date: 2020-02-19
 ---
 

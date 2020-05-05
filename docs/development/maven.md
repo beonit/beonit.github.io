@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Maven
-parent: Spring
+parent: Development
 date: 2020-03-11
 ---
 

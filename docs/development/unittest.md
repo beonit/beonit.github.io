@@ -1,15 +1,22 @@
 ---
 layout: default
-title: Android Unit Test
-parent: Android
+title: Unit Test
+parent: Development
 date: 2020-05-01
 ---
 
-## Hamcrest matcher
+
+## Android
+
+### Robolectric
+
+- Android framework 코드를 Intrument test 없이 테스트 하도록 도와주는 테스트 프레임워크
+
+### Hamcrest matcher
 
 - https://www.lesstif.com/java/hamcrest-junit-test-case-18219426.html
 
-## Junit framework
+### Junit framework
 
 - [differences between 2 JUnit Assert classes
 ](https://stackoverflow.com/a/291074)
@@ -18,7 +25,7 @@ date: 2020-05-01
 - JUnit 5.X: org.junit.jupiter.api
   - [JUnit-5-Intro](https://javacan.tistory.com/entry/JUnit-5-Intro)
 
-## Groovy Spock Setup
+### Groovy Spock Setup
 
 - gradle
 
@@ -59,7 +66,7 @@ date: 2020-05-01
     }
     ```
 
-## Groovy Trouble shooting
+### Groovy Trouble shooting
 
 - [Accessing Kotlin companion object in Groovy](https://stackoverflow.com/a/44738645)
   - `TaskType.@Companion.fromInt(expect.type) == actual.type`

@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Spring
+title: Development
 nav_order: 8
 has_children: true
-permalink: /docs/spring
+permalink: /docs/develop
 ---
 
 # Spring

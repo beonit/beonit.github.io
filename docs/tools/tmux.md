@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mux
+title: tmux
 parent: Tools
 date: 2020-04-29
 ---

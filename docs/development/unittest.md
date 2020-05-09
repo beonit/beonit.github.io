@@ -8,6 +8,12 @@ date: 2020-05-01
 
 ## Android
 
+- Gradle test report html : `./[module]/build/reports/tests/testDebugUnitTest/index.html`
+
+### Jacoco
+
+- gradle jacocoTestReportDebug
+
 ### Robolectric
 
 - Android framework 코드를 Intrument test 없이 테스트 하도록 도와주는 테스트 프레임워크

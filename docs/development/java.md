@@ -20,3 +20,21 @@ date: 2020-03-11
 Map<String, UsrEntity> userMap = users.stream()
     .collect(Collectors.toMap(UsrEntity::id, Function.identity(), (a, b) -> b));
 ```
+
+## `java.util.UUID`
+
+랜덤한 ID 나 문자열을 만들어 낼 때 사용된다. `123e4567-e89b-12d3-a456-556642440000` 이런 값이 생성된다.
+[baeldung java-uuid](https://www.baeldung.com/java-uuid)
+
+    UUID.randomUUID().toString();   // 128 bit
+    UUID.getLeastSignificantBits(); // 64 bit
+    UUID.getMostSignificantBits();  // 64 bit
+
+SHA-256 만들기
+
+```java
+MessageDigest salt = MessageDigest.getInstance("SHA-256");
+salt.update(UUID.randomUUID().toString().getBytes("UTF-8"));
+String digest = bytesToHex(salt.digest());
+```
+

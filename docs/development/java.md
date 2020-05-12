@@ -38,3 +38,16 @@ salt.update(UUID.randomUUID().toString().getBytes("UTF-8"));
 String digest = bytesToHex(salt.digest());
 ```
 
+## Log
+
+[How to map levels of java.util.logging and SLF4J logger?](https://stackoverflow.com/a/20807571)
+
+    ALL     -> TRACE
+    FINEST  -> TRACE
+    FINER   -> DEBUG
+    FINE    -> DEBUG
+    CONFIG  -> INFO
+    INFO    -> INFO
+    WARNING -> WARN
+    SEVERE  -> ERROR
+    OFF     -> ERROR

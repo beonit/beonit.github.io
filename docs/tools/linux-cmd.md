@@ -22,6 +22,7 @@ date: 2020-02-18
 ## SED
 
 - 문자열에서 특정 문자열만 뽑아내기 : sed -rn 's/.*price":([0-9]*).*/\1/p'
+- CRLF 를 제거하기 `sed -i s/\r// <filename>`
 
 ```bash
 sed -i 's/env_python3/python3/' pathutil.py
@@ -30,6 +31,7 @@ sed -i 's/^DELETE_DATE_GZ = 31/DELETE_DATE_GZ = 7/' reglogUploader/reglogUploade
 sed -i 's/^M$//g' ./test/java/com/samsung/pay/kr/test/DaoTest.java
 sed -i 's/},{"id":/},\n{"id":/g' filename
 sed 's/.*merchantUserId=\(.*\), userKey.*/\1/p'
+sed -rn 's/^.*: \[([A-Za-z]+)\].*\(([0-9]+)ms\).*/\1\t\t\2/p' before.log
 ```
 
 ## GREP

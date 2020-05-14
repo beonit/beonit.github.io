@@ -5,11 +5,11 @@ parent: Tools
 date: 2020-02-15
 ---
 
-# Visual Studio Code
+Visual Studio Code
 
 ## vscode
 
-- Ubuntu 에서 실행시 pac 설정 방법
+- Ubuntu 에서 실행시 proxy-pac 설정 방법
   1. `/usr/share/applications/code.desktop` 의 실행 명령어 수정 필요.
   2. `Exec=/usr/share/code/code --unity-launch --proxy-pac-url=http://swp.sec.samsung.net:8088/samsungcs.pac --ignore-certificate-errors %F`
 - F1 이 JetBrain 의 Shift+Shift 의 역할을 한다.
@@ -29,8 +29,7 @@ date: 2020-02-15
 
 ## Shortcuts
 
-[Helpful shortcuts for VSCode
- ,GIST](https://gist.github.com/bradtraversy/b28a0a361880141af928ada800a671d9)
+[Helpful shortcuts for VSCode, GIST](https://gist.github.com/bradtraversy/b28a0a361880141af928ada800a671d9)
 
 - F2 키로 변수 rename
 - Reformat code
@@ -50,3 +49,18 @@ date: 2020-02-15
   - Next occurrence : `F4`
   - Go to file : `Cmd+p`
   - Go to project explorer : `Cmd+0`
+- Markdown
+  - preview : `cmd+shift+p`
+- Print Timestamp
+  - (설정필요) `cmd opt d`, `cmd opt t`
+
+## Extensions
+
+- 나에겐 필수
+  - Print timestamp
+  - Markdown lint
+  - Git graph
+
+- 아직 유용성은 잘 모르겠는 extension
+  - Git history
+  - Intellij Keybinding

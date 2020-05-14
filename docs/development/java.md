@@ -7,8 +7,7 @@ date: 2020-03-11
 
 ## Java
 
-- Uber-jar : Uber 는 독일어로 Over 라는 뜻임. 따라서 Uber-jar 는 Over Simple-jar 이다. 배포할 때 dependency lib 의 위치에 대해서 고민할 필요가 없으며 실행시 dependency 설정이 필요없다.
-  - ref : https://stackoverflow.com/a/11947093
+- Uber-jar : Uber 는 독일어로 Over 라는 뜻임. 따라서 Uber-jar 는 Over Simple-jar 이다. 배포할 때 dependency lib 의 위치에 대해서 고민할 필요가 없으며 실행시 dependency 설정이 필요없다. ([Stackoverflow](https://stackoverflow.com/a/11947093))
 
 ## Concept
 
@@ -41,9 +40,9 @@ Map<String, UsrEntity> userMap = users.stream()
 랜덤한 ID 나 문자열을 만들어 낼 때 사용된다. `123e4567-e89b-12d3-a456-556642440000` 이런 값이 생성된다.
 [baeldung java-uuid](https://www.baeldung.com/java-uuid)
 
-    UUID.randomUUID().toString();   // 128 bit
-    UUID.getLeastSignificantBits(); // 64 bit
-    UUID.getMostSignificantBits();  // 64 bit
+  UUID.randomUUID().toString();   // 128 bit
+  UUID.getLeastSignificantBits(); // 64 bit
+  UUID.getMostSignificantBits();  // 64 bit
 
 SHA-256 만들기
 
@@ -57,12 +56,12 @@ String digest = bytesToHex(salt.digest());
 
 [How to map levels of java.util.logging and SLF4J logger?](https://stackoverflow.com/a/20807571)
 
-    ALL     -> TRACE
-    FINEST  -> TRACE
-    FINER   -> DEBUG
-    FINE    -> DEBUG
-    CONFIG  -> INFO
-    INFO    -> INFO
-    WARNING -> WARN
-    SEVERE  -> ERROR
-    OFF     -> ERROR
+  ALL     -> TRACE
+  FINEST  -> TRACE
+  FINER   -> DEBUG
+  FINE    -> DEBUG
+  CONFIG  -> INFO
+  INFO    -> INFO
+  WARNING -> WARN
+  SEVERE  -> ERROR
+  OFF     -> ERROR

@@ -33,6 +33,15 @@ date: 2020-02-27
 - `git branch --merged | egrep -v "(^\*|release|develop)" | xargs git branch -d` : merge 된 브랜치 삭제
 - `git remote prune origin` : remote 에서 삭제된 브랜치 삭제
 
+
+### Diff
+
+- [How to compare files from two different branches?](https://stackoverflow.com/a/4099805)
+
+    git diff mybranch master -- myfile.cs
+	git diff mybranch..master -- myfile.cs
+	git diff ..master path/to/file
+
 ## 좋은 git 커밋 메시지를 작성하기 위한 8가지 약속
 
 - **본문은 어떻게보다 무엇을, 왜에 맞춰 작성하기**
@@ -43,3 +52,8 @@ date: 2020-02-27
 - 제목은 명령조로 (영어)
 - Github - 제목(이나 본문)에 이슈 번호 붙이기
 - 본문은 영문 기준 72자마다 줄 바꾸기
+
+## Submodule
+
+- [Git submodules](https://pinedance.github.io/blog/2019/05/28/Git-Submodule)
+- [Git book submodule](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%EC%84%9C%EB%B8%8C%EB%AA%A8%EB%93%88)

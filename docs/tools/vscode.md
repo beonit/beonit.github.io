@@ -53,6 +53,7 @@ Visual Studio Code
   - preview : `cmd+shift+p`
 - Print Timestamp
   - (설정필요) `cmd opt d`, `cmd opt t`
+- Rectangle select : `Opt+shift 마우스`
 
 ## Extensions
 

@@ -8,3 +8,4 @@ Gemfile.lock
 node_modules
 vendor
 beonit.code-workspace
+.idea

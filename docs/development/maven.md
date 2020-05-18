@@ -5,17 +5,6 @@ parent: Development
 date: 2020-03-11
 ---
 
-# Maven
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
-
 ## BASIC
 
 - [maven 홈페이지](https://maven.apache.org/)

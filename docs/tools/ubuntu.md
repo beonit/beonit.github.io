@@ -7,10 +7,14 @@ date: 2020-04-13
 
 # Ubuntu
 
-## .desktop file
+.desktop file : 
 
-- `~/.local/share/applications`
-- `/usr/share/applications`
+    ~/.local/share/applications
+    /usr/share/applications
+   
+install deb
+
+    sudo dpkg -i filename.deb
 
 
 ## Unsplash

@@ -1,41 +1,15 @@
 ---
 layout: default
-title: Unit Test
-parent: Development
-date: 2020-05-01
+title: Spock
+parent: Test
+date: 2020-05-18
+nav_order: 4
 ---
 
+## Spock
 
-## Android
+gradle setup
 
-- Gradle test report html : `./[module]/build/reports/tests/testDebugUnitTest/index.html`
-
-### Jacoco
-
-- gradle jacocoTestReportDebug
-
-### Robolectric
-
-- Android framework 코드를 Intrument test 없이 테스트 하도록 도와주는 테스트 프레임워크
-
-### Hamcrest matcher
-
-- https://www.lesstif.com/java/hamcrest-junit-test-case-18219426.html
-
-### Junit framework
-
-- [differences between 2 JUnit Assert classes
-](https://stackoverflow.com/a/291074)
-  - JUnit 3.X: junit.framework.Assert
-  - JUnit 4.X: org.junit.Assert
-- JUnit 5.X: org.junit.jupiter.api
-  - [JUnit-5-Intro](https://javacan.tistory.com/entry/JUnit-5-Intro)
-
-### Groovy Spock Setup
-
-- gradle
-
-    ```groovy
     buildscript {
         dependencies {
             // Spock : https://github.com/groovy/groovy-android-gradle-plugin
@@ -51,11 +25,9 @@ date: 2020-05-01
         testImplementation 'org.codehaus.groovy:groovy-android-gradle-plugin:2.0.1'
         testImplementation 'org.spockframework:spock-core:1.1-groovy-2.4-rc-2'
     }
-    ```
 
-- simple test
+simple test
 
-    ```groovy
     package com.obplanner.data.converter
     import spock.lang.Specification
     import java.math.RoundingMode
@@ -70,29 +42,10 @@ date: 2020-05-01
             boundPrice == 500
         }
     }
-    ```
 
-### Groovy Trouble shooting
 
-- [Accessing Kotlin companion object in Groovy](https://stackoverflow.com/a/44738645)
-  - `TaskType.@Companion.fromInt(expect.type) == actual.type`
 
-- Set final value
-  
-    ```groovy
-    def field = AlarmEntity.class.getDeclaredField("type")
-    field.setAccessible(true)
-    field.set(expect, random.nextInt(12))
-    ```
-
-- Content value is always null
-  - [test](https://stackoverflow.com/a/46489571)
-
-## Spcok
-
-- given, when, then, where
-
-### 여러개의 값 테스트
+### Spcok - 여러개의 값 테스트
 
 `where` 의 table 표현은 정말 최고다. 같은 로직에 대해서 파라미터만 달리하는 경계선 테스트를 할 때 혹은 전달인자의 오류가 값에 대해서 테스트할 때 이것보다 좋을 수 없다.
 `@Unroll` 은 어느 값에서 이상이 있는지 확인수 있으니 좋다. 하지만 단위 테스트 갯수가 뻥튀기 되는 단점이 있다.
@@ -147,4 +100,17 @@ def "dateToDbInt multiple"() {
             assert startExpect + it == actual
         }
 }
+```
+
+
+## Groovy Trouble shooting
+
+[Accessing Kotlin companion object in Groovy](https://stackoverflow.com/a/44738645) : `TaskType.@Companion.fromInt(expect.type) == actual.type`
+
+Set final value
+  
+```groovy
+def field = AlarmEntity.class.getDeclaredField("type")
+field.setAccessible(true)
+field.set(expect, random.nextInt(12))
 ```

@@ -21,12 +21,11 @@ Warning/Welcom message 삭제
 - config 파일에서 호스트 설정에 추가 : `LogLevel QUIET`
 - `ssh id@host 'touch .hushlogin'`
 
-
 ### SSH over multiple hop
 
 `.ssh/config` 의 설정으로 가능하다.
 
-```plain
+```config
 Host GW-SERVER
     Hostname {ipaddress}
     User {account}
@@ -39,7 +38,6 @@ Host DEST-SERVER
     port {dest-port}
 ```
 
-
 ## OpenSSL
 
 - [OpenSSL 자주 쓰는 명령어(command) 및 사용법, tip 정리](https://www.lesstif.com/pages/viewpage.action?pageId=7635159)
@@ -50,13 +48,13 @@ Host DEST-SERVER
 
 ### 인증서/CSR/PRI 짝 맞춰보기
 
-```
+```bash
 $ openssl x509 -in file.crt -pubkey -noout -outform pem | sha256sum
 $ openssl req -in file.csr -pubkey -noout -outform pem | sha256sum
 $ openssl pkey -in file.pri -pubout -outform pem | sha256sum
 ```
 
-```
+```bash
 $ openssl x509 -noout -modulus -in file.crt | openssl md5
 $ openssl rsa -noout -modulus -in file.pri | openssl md5
 $ openssl req -noout -modulus -in file.csr | openssl md5

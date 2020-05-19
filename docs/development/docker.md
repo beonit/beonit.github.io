@@ -5,6 +5,14 @@ parent: Development
 date: 2020-02-19
 ---
 
+## Setup
+
+- [Run Docker commands without sudo](https://github.com/sindresorhus/guides/pulls)
+
+## Docker compose
+
+docker-compose up
+
 ## Spring boot docker
 
 Spring boot 로 docker image 를 만드는 방법

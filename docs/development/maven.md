@@ -131,6 +131,7 @@ date: 2020-03-11
     <layout>default</layout>
 </repository>
 ```
+
 ## Plugins
 
 ### 대표 플러그인들
@@ -166,4 +167,63 @@ date: 2020-03-11
         </buildArgs>
     </configuration>
 </plugin>
+```
+
+### tomcat7 plugin
+
+[tomcat7-maven-plugin - 메이븐에서 톰캣 구동해서 app deploy 하기](https://www.lesstif.com/java/tomcat7-maven-plugin-app-deploy-14090451.html)
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.apache.tomcat.maven/tomcat7-maven-plugin -->
+<plugin>
+    <groupId>org.apache.tomcat.maven</groupId>
+    <artifactId>tomcat7-maven-plugin</artifactId>
+    <version>2.2</version>
+    <configuration>
+        <url>http://localhost/manager/text</url>
+        <username>admin</username>
+        <password>admin</password>
+        <path>/${project.artifactId}.war</path>
+    </configuration>
+</plugin>
+```
+
+```bash
+mvn tomcat7:deploy
+mvn tomcat7:undeploy
+mvn tomcat7:redeploy
+```
+
+Docker 의 경우 remote 로 인식 하기 때문에 manager 의 설정도 바꿔야 한다.
+
+`manager.xml`
+
+```xml
+<Context antiResourceLocking="false" privileged="true" >
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="^.*$" />
+  <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
+</Context>
+```
+
+`tomcat-users.xml`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcat-users>
+    <role rolename="manager-gui"/>
+    <role rolename="manager-script"/>
+    <user username="admin" password="admin" roles="manager-gui,manager-script"/>
+</tomcat-users>
+
+```
+
+```dockerfile
+# Manager setup for "/service/smps/web"
+RUN mkdir -p /service/smps/web/
+RUN mv /usr/local/tomcat/webapps.dist /service/smps/web/app/
+COPY manager-context.xml /service/smps/web/app/manager/META-INF/context.xml
+
+# Add user for manager
+COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
 ```

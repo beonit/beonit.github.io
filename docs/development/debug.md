@@ -1,11 +1,47 @@
 ---
 layout: default
-title: Apache HttpComponents
+title: Debug history
 parent: Development
-date: 2020-05-14
+date: 2020-05-29
 ---
 
-## 2 Way TLS + Connection pool
+## 2020-05-22 : Sitemesh 2.4.2 DefaultFactory 의 File.toURL() Bug
+
+### 현상
+
+`OpenSymphony:Sitemesh-wildfly:2.4.2` 를 사용하는 오래된 프로젝트를 유지보수 해야 하는 작업이 들어왔다. `/` 와 `/region/subject/` 의 경로에서 동작하는 multi context tomcat 이었다.  
+`OpenSymphony:Sitemesh-wildfly` 가 다운받을 수 없고 해당 프로젝트는 tomcat 을 사용하므로 wildfly 로 변경함  
+ROOT context 는 정상적으로 동작 했지만, sub context 는 spring 은 동작하지만, 500 응답만 내려오고 에러 페이지 조차 제대로 응답하지 않음  
+tomcat localhost 로그를 뒤져보니 `/WEB-INF/sitemesh.xml` 파일을 로딩하며 오류가 발생하고 있었음  
+`Could not read config file : /WEB-INF/sitemesh.xml: java.io.FileNotFoundException: /tomcatHome/app/region (No such file or directory)`  
+sitemesh 파일은 `/tomcatHome/app/region#subject/WEB-INF/sitemsh.xml` 에 위치하는데 잘못된 경로가 로드되고 있다.  
+
+### 원인
+
+Sitemesh 의 [DefaultFactory.java](https://github.com/sitemesh/sitemesh2/blob/master/src/java/com/opensymphony/module/sitemesh/factory/DefaultFactory.java) 에 오류가 있다.
+
+```java
+is = configFile.toURL().openStream();
+```
+
+[File.toURL()](https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/io/File.java#L652) 은 deprecated 되었다. 수정 권고 방법은 `File.toURI().toURL()` 이다. 더 깊이 들어가보진 않았지만 `#` 을 제대로 처리 못 하는 듯 하다.  
+
+### 해결 방법
+
+두가지 해결 방법이 있었다. 둘중 아무거나 선택해서 사용하면 된다.
+
+1. 버그 수정한 custom factory 로 교체 stackOverflow [Sitemesh, Cannot construct Factory : com.opensymphony.module.sitemesh.factory.DefaultFactory](https://stackoverflow.com/a/61060159)
+2. atlassian/sitemesh2 를 사용하는 방법.
+  - 에러 부분을 정확하게 분석하여 maven 에 배포 했다.
+  - [JRA-19051 SIM-263: Fix default factory to use toURI().toURL() such ](https://github.com/atlassian/sitemesh2/commit/63eae1356cfe4a56b2471473fe429340b1dcff13)
+  
+### 해결 확인
+
+Sitemesh 가 정상적으로 동작하여 jsp 가 로딩 되면 된다.  
+에러 메세지 구글에 넣어서 검색하면 답변이 바로 나온다. 그냥 내가 못나게 디버깅 했다.
+
+
+## 2020-05-14 : Apache HttpComponent, 2 Way TLS + Connection pool
 
 ### 현상
 

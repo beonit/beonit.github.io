@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Git
+title: Firefox
 parent: Tools
 date: 2020-05-19
 ---

@@ -9,7 +9,7 @@ date: 2020-05-29
 
 ### 현상
 
-`/` 와 `/region/subject/` 의 경로에서 동작하는 multi context tomcat 프로젝트에서 `sitemesh:2.4.2` 를 사용할 때 발생 오류 발생
+`/` 와 `/region/subject/` 의 경로에서 동작하는 multi context tomcat 프로젝트에서 `sitemesh:2.4.2` 를 사용할 때 발생 오류 발생  
 ROOT context 는 정상적으로 동작 했지만, sub context 는 500 응답만 내려오고 에러 페이지 조차 나오지 않음  
 tomcat localhost 로그 : `Could not read config file : /WEB-INF/sitemesh.xml: java.io.FileNotFoundException: /tomcatHome/app/region (No such file or directory)`  
 sitemesh 파일은 `/tomcatHome/app/region#subject/WEB-INF/sitemsh.xml` 에 위치하는데 `/tomcatHome/app/region#` 까지만 읽으며 오류가 발생하고 있음
@@ -46,17 +46,15 @@ Sitemesh 가 정상적으로 동작하여 jsp 가 로딩 되면 된다.
 동일한 도메인이어서 같은 Route 객체가 생성됨에도 불구하고 connectionPool 에서 connection 을 lease 하지 못한다.
 로그상 route allocated 가 꾸준히 증가 되는것을 확인할 수 있다.
 
-```txt
-15:55:32.563 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 0; route allocated: 0 of 50; total allocated: 0 of 200]
-15:55:32.570 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 0][route: {s}->https://services.com][total kept alive: 0; route allocated: 1 of 50; total allocated: 1 of 200]
-15:55:32.570 o.a.http.impl.execchain.MainClientExec   : Opening connection {s}->https://services.com
-15:55:34.242 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
-15:55:34.242 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 1][route: {s}->https://services.com][total kept alive: 1; route allocated: 2 of 50; total allocated: 2 of 200]
-15:55:34.242 o.a.http.impl.execchain.MainClientExec   : Opening connection {s}->https://services.com
-15:55:35.784 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 2; route allocated: 2 of 50; total allocated: 2 of 200]
-15:55:35.784 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 2][route: {s}->https://services.com][total kept alive: 2; route allocated: 3 of 50; total allocated: 3 of 200]
-15:55:35.784 o.a.http.impl.execchain.MainClientExec   : Opening connection {s}->https://services.com
-```
+> 15:55:32.563 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 0; route allocated: 0 of 50; total allocated: 0 of 200]
+> 15:55:32.570 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 0][route: {s}->https://services.com][total kept alive: 0; route allocated: 1 of 50; total allocated: 1 of 200]
+> 15:55:32.570 o.a.http.impl.execchain.MainClientExec   : Opening connection {s}->https://services.com
+> 15:55:34.242 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
+> 15:55:34.242 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 1][route: {s}->https://services.com][total kept alive: 1; route allocated: 2 of 50; total allocated: 2 of 200]
+> 15:55:34.242 o.a.http.impl.execchain.MainClientExec   : Opening connection {s}->https://services.com
+> 15:55:35.784 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 2; route allocated: 2 of 50; total allocated: 2 of 200]
+> 15:55:35.784 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 2][route: {s}->https://services.com][total kept alive: 2; route allocated: 3 of 50; total allocated: 3 of 200]
+> 15:55:35.784 o.a.http.impl.execchain.MainClientExec   : Opening connection {s}->https://services.com
 
 ### 원인
 
@@ -110,21 +108,19 @@ this.httpClient = httpClientFactory
 
 커넥션이 증가하지 않고 leased/released 되는 것을 확인할 수 있다.
 
-```txt
-16:16:35.000 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 0; route allocated: 0 of 50; total allocated: 0 of 200]
-16:16:35.007 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 0][route: {s}->https://services.com][total kept alive: 0; route allocated: 1 of 50; total allocated: 1 of 200]
-16:16:36.631 h.i.c.PoolingHttpClientConnectionManager : Connection [id: 0][route: {s}->https://services.com] can be kept alive indefinitely
-16:16:36.632 h.i.c.PoolingHttpClientConnectionManager : Connection released: [id: 0][route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
-16:16:36.645 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
-16:16:36.646 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 0][route: {s}->https://services.com][total kept alive: 0; route allocated: 1 of 50; total allocated: 1 of 200]
-16:16:36.944 h.i.c.PoolingHttpClientConnectionManager : Connection [id: 0][route: {s}->https://services.com] can be kept alive indefinitely
-16:16:36.945 h.i.c.PoolingHttpClientConnectionManager : Connection released: [id: 0][route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
-16:16:36.948 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
-16:16:36.948 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 0][route: {s}->https://services.com][total kept alive: 0; route allocated: 1 of 50; total allocated: 1 of 200]
-16:16:37.234 h.i.c.PoolingHttpClientConnectionManager : Connection [id: 0][route: {s}->https://services.com] can be kept alive indefinitely
-16:16:37.235 h.i.c.PoolingHttpClientConnectionManager : Connection released: [id: 0][route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
-16:16:37.238 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
-16:16:37.238 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 0][route: {s}->https://services.com][total kept alive: 0; route allocated: 1 of 50; total allocated: 1 of 200]
-16:16:37.616 h.i.c.PoolingHttpClientConnectionManager : Connection [id: 0][route: {s}->https://services.com] can be kept alive indefinitely
-16:16:37.617 h.i.c.PoolingHttpClientConnectionManager : Connection released: [id: 0][route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
-```
+> 16:16:35.000 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 0; route allocated: 0 of 50; total allocated: 0 of 200]
+> 16:16:35.007 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 0][route: {s}->https://services.com][total kept alive: 0; route allocated: 1 of 50; total allocated: 1 of 200]
+> 16:16:36.631 h.i.c.PoolingHttpClientConnectionManager : Connection [id: 0][route: {s}->https://services.com] can be kept alive indefinitely
+> 16:16:36.632 h.i.c.PoolingHttpClientConnectionManager : Connection released: [id: 0][route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
+> 16:16:36.645 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
+> 16:16:36.646 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 0][route: {s}->https://services.com][total kept alive: 0; route allocated: 1 of 50; total allocated: 1 of 200]
+> 16:16:36.944 h.i.c.PoolingHttpClientConnectionManager : Connection [id: 0][route: {s}->https://services.com] can be kept alive indefinitely
+> 16:16:36.945 h.i.c.PoolingHttpClientConnectionManager : Connection released: [id: 0][route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
+> 16:16:36.948 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
+> 16:16:36.948 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 0][route: {s}->https://services.com][total kept alive: 0; route allocated: 1 of 50; total allocated: 1 of 200]
+> 16:16:37.234 h.i.c.PoolingHttpClientConnectionManager : Connection [id: 0][route: {s}->https://services.com] can be kept alive indefinitely
+> 16:16:37.235 h.i.c.PoolingHttpClientConnectionManager : Connection released: [id: 0][route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
+> 16:16:37.238 h.i.c.PoolingHttpClientConnectionManager : Connection request: [route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]
+> 16:16:37.238 h.i.c.PoolingHttpClientConnectionManager : Connection leased: [id: 0][route: {s}->https://services.com][total kept alive: 0; route allocated: 1 of 50; total allocated: 1 of 200]
+> 16:16:37.616 h.i.c.PoolingHttpClientConnectionManager : Connection [id: 0][route: {s}->https://services.com] can be kept alive indefinitely
+> 16:16:37.617 h.i.c.PoolingHttpClientConnectionManager : Connection released: [id: 0][route: {s}->https://services.com][total kept alive: 1; route allocated: 1 of 50; total allocated: 1 of 200]

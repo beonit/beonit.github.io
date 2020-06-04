@@ -12,6 +12,13 @@ Best editor in the world.
 - 덮어쓰기 모드 : `overwrite-mode`
 - line-wrap 방지 : `toggle-truncate-lines`
 
+## Hotkey
+
+- [window configuration register](https://www.gnu.org/software/emacs/manual/html_node/emacs/Configuration-Registers.html#Configuration-Registers)
+  - save register : `C-x r w`
+  - load register : `C-x r j`
+- mode manual : `C-c h ?`
+
 ## find-grep-dired
 
 ## replace-regexp

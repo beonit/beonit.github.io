@@ -21,7 +21,6 @@ date: 2020-02-27
 - [Git book](https://git-scm.com/book/ko/v2)
 - [Git rebase](http://dogfeet.github.io/articles/2012/git-merge-rebase.html)
 
-
 ## Git useful command
 
 이미 추가된 파일을 local 엔 남기고 저장소에서만 삭제하고 싶을 때
@@ -31,60 +30,61 @@ date: 2020-02-27
 Https credential save
     
     git config --global credential.helper store
+	
 
 ### Branch
 
-fetch 이후에 origin 을 미리 보고자할 때
+checkout
 
-    git checkout -b fetch_head origin/master
-
-git forward porting
-    
-    git pull --rebase origin/master
+- `git checkout -b fetch_head origin/master` : fetch 이후에 origin 을 미리 보고자할 때
 
 Branch list
 
-    git branch
-    git branch -r
-    git branch -a
+- `git branch`
+- `git branch -r`
+- `git branch -a`
 
-git branch branchName + git checkout branchName
+push
 
-    git checkout -b branchName
-    git checkout -b <new_branch_name> <SHA1>
+- `git push origin --delete test` : delete remote branch
 
-Squash merge : 여러 커밋을 하나로 만들어서 넣는다. branch 연결고리가 사라진다.
+checkout
 
-    git merge {{branchName}} --squash
+- `git checkout -b <new_branch_name> <SHA1>` git branch branchName + git checkout branchName
 
-브랜치를 특정 commit 으로 강제로 옮긴다
+pull
 
-    git branch -f master SHA-1
+- `git pull --rebase origin/master` : git forward porting
 
-로컬에서 트랙킹 중인 리모트 브랜치 정보를 지운다. (리모트에서 브랜치가 지워진건 아니다)
+rebase
 
-    git branch -rd origin/17W33 
+- `git rebase -i HEAD~2` : rebase interfactive
 
-merge 된 브랜치 삭제
+merge
 
-    git branch --merged | egrep -v "(^\*|release|develop)" | xargs git branch -d
+- `git merge {{branchName}} --squash` : Squash merge : 여러 커밋을 하나로 만들어서 넣는다. branch 연결고리가 사라진다.
+- `git branch -f master SHA-1` : 브랜치를 특정 commit 으로 강제로 옮긴다
+- `git branch -rd origin/17W33` : 로컬에서 트랙킹 중인 리모트 브랜치 정보를 지운다. (리모트에서 브랜치가 지워진건 아니다)
 
-remote 에서 삭제된 브랜치 삭제
+remote
 
-    git remote prune origin
+- `git remote prune origin` : remote 에서 삭제된 브랜치 삭제
 
-수정된 파일 리스트만 표시
+log
 
-    git show --pretty="" --name-only 30e15fd5
+- `git show --pretty="" --name-only 30e15fd5` : 수정된 파일 리스트만 표시
+
+complex command
+
+- `git branch --merged | egrep -v "(^\*|release|develop)" | xargs git branch -d` : merge 된 브랜치 삭제
 
 
-### Diff
+Diff
 
 - [How to compare files from two different branches?](https://stackoverflow.com/a/4099805)
-
-    git diff mybranch master -- myfile.cs
-	git diff mybranch..master -- myfile.cs
-	git diff ..master path/to/file
+  - `git diff mybranch master -- myfile.cs`
+  - `git diff mybranch..master -- myfile.cs`
+  - `Git diff ..master path/to/file`
 
 ## Submodule
 

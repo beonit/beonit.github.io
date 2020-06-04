@@ -356,6 +356,7 @@ script:
 ### 91. Travis config for deployment
 
 - 배포하자.
+- S3 storage 는 elastic beans talk 를 생성하면 자동으로 생성된다.
 
 ```travis
 sudo: required
@@ -373,8 +374,8 @@ deploy:
     region: "us-west-2"
     app: "{{APP_NAME}}"
     env: "Docker-env"
-    bucket_name: "{{S3 bucket name}}" # S3 storage 는 elastic beans talk 를 생성하면 자동으로 생성된다.
-    bucket_path: "{{APP_NAME}}"
+    bucket_name: "{{ S3_bucket_name }}"
+    bucket_path: "{{ APP_NAME }}"
     on:
     branch: master
 ```

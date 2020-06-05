@@ -3,6 +3,7 @@ layout: default
 title: Emacs
 parent: Tools
 date: 2020-02-19
+last_modified_date: 2020-06-05T13:22:15 KST
 ---
 
 Best editor in the world.
@@ -18,6 +19,7 @@ Best editor in the world.
   - save register : `C-x r w`
   - load register : `C-x r j`
 - mode manual : `C-c h ?`
+- insert time stamp : `C-u M-! date`
 
 ## find-grep-dired
 

@@ -31,16 +31,19 @@ rename()
 
 [8.Test, Shell Shellscript Tutorial](https://www.shellscript.sh/test.html)
 
-
 ### Loop
 
 [7.Loop, Shell Scripting Tutorial](https://www.shellscript.sh/loops.html)
+
+```bash
+SERVER_LIST=(server1 server2 server3 server4)
+for server in "${SERVER_LIST[@]}"; do ssh $server grep "text" /log/tomcat/access.log; done;
+```
 
 ## Tip
 
 - [How to manually expand a special variable (ex: ~ tilde) in bash](https://stackoverflow.com/a/27485157/4888040)
   - `var="${var/#\~/$HOME}"`
-
 
 ## 활용
 

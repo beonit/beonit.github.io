@@ -1,6 +1,6 @@
 ---
 layout: default
-title: HTTP
+title: Network
 parent: Development
 date: 2020-05-14
 ---
@@ -9,7 +9,7 @@ date: 2020-05-14
 
 TIME_WAIT, CLOSE_WAIT
 
-[https://t1.daumcdn.net/cfile/tistory/2766F146591FACE91D](https://t1.daumcdn.net/cfile/tistory/2766F146591FACE91D)
+![https://t1.daumcdn.net/cfile/tistory/2766F146591FACE91D](https://t1.daumcdn.net/cfile/tistory/2766F146591FACE91D)
 
 TIME_WAIT 이유 ([http://docs.likejazz.com/time-wait/#fn:fn-2](http://docs.likejazz.com/time-wait/#fn:fn-2))
 
@@ -19,8 +19,6 @@ TIME_WAIT 이유 ([http://docs.likejazz.com/time-wait/#fn:fn-2](http://docs.like
 ## 3 WAY HAND SHAKE
 
 ![https://www.mdpi.com/applsci/applsci-06-00358/article_deploy/html/images/applsci-06-00358-g001.png](https://www.mdpi.com/applsci/applsci-06-00358/article_deploy/html/images/applsci-06-00358-g001.png)
-
-## VS UDP
 
 ## 참고
 

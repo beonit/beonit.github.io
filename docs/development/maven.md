@@ -141,6 +141,17 @@ date: 2020-03-11
 - [compiler](https://maven.apache.org/plugins/maven-compiler-plugin/) : The Compiler Plugin is used to compile the sources of your project.
 - [shade](Apache Maven Shade Plugin) : 의존성을 포함한 실행 가능한 single jar(uber-jar)
 
+### Compiler
+
+- 자바 버전 지시자 설정 방법
+
+```xml
+<properties>
+  <maven.compiler.source>1.8</maven.compiler.source>
+  <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+```
+
 ### Spotify dockerfile
 
 - (Spotify dockerfile)https://github.com/spotify/dockerfile-maven

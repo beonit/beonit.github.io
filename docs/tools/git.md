@@ -85,6 +85,10 @@ Diff
   - `git diff mybranch master -- myfile.cs`
   - `git diff mybranch..master -- myfile.cs`
   - `Git diff ..master path/to/file`
+- 브랜치 사이에서 변경된 파일 리스트 보기
+  - `git diff --name-status release`
+- 특정 브랜치의 파일로 바꾸기
+  - git checkout {BRANCH} {FILE}
 
 ## Submodule
 

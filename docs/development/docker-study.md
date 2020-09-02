@@ -374,8 +374,8 @@ deploy:
     region: "us-west-2"
     app: "{{APP_NAME}}"
     env: "Docker-env"
-    bucket_name: "{{ S3_bucket_name }}"
-    bucket_path: "{{ APP_NAME }}"
+    bucket_name: "{{S3 bucket name}}"
+    bucket_path: "{{APP_NAME}}"
     on:
     branch: master
 ```

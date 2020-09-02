@@ -27,6 +27,10 @@ last_modified_date: 2020-06-05T13:58:07 KST
 - 단점
   - 객체가 가지는 값마다 새로운 객체가 필요. 따라서 메모리 누수와 새로운 객체를 계속 생성해야하기 때문에 성능저하 가능
 
+## Convension
+
+- Enum 의 entry 는 상수 이므로 대문자를 사용한다. [Because they are constants, the names of an enum type's fields are in uppercase letters.](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)
+
 ## Java Utilities
 
 ### Stream

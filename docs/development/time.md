@@ -68,7 +68,7 @@ println(caMil)
 1591258999
 ```
 
-## Java LocalDateTime
+## JSR-310
 
-JSR-310 Java 1.8 부터 사용할 수 있다. 잘못 설계된 Calendar, Date 클래스를 대체한다.  
-1.7 이하에서 사용하기 위해서 [threeten](https://www.threeten.org/) 프로젝트가 있고, [ThreeTenABP](https://github.com/JakeWharton/ThreeTenABP) 에서 안드로이드를 백포트를 한다.
+JSR-310 Java 1.8 부터 사용할 수 있다. 잘못 설계된 Calendar, Date 클래스를 대체한다. (Calendar 와 Date 는 Mutable 하다)  
+1.7 이하에서 사용하기 위해서 [threeten](https://www.threeten.org/) 프로젝트가 있고, [ThreeTenABP](https://github.com/JakeWharton/ThreeTenABP) 에서 안드로이드를 백포트를 한다

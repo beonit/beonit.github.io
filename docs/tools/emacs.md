@@ -30,6 +30,11 @@ Best editor in the world.
 - Kotlin vo to spock test : `(replace-regexp "\\(val\\|var\\) \\(.*\\):.*" "vo1.\\2 == vo2.\\2")`
 - 두개 그룹의 순서 바꾸기 : `(replace-regexp "\\(.*\\)\t\\(.*\\)" "\\2\t\\1")`
 
+## Tramp
+
+- emacs 의 tramp 는 파일을 모두 다운받고 업로드 하는 방식이라 대용량의 로그 파일을 확인하는데 불편함이 많다.
+- `/sudo::` : 루트 모드로 파일 접근하기
+
 ## .emacs
 
 ```elisp

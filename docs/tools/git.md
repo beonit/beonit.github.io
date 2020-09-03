@@ -28,9 +28,8 @@ date: 2020-02-27
     git rm -r --cached bin/
 
 Https credential save
-    
+
     git config --global credential.helper store
-	
 
 ### Branch
 

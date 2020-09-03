@@ -5,10 +5,6 @@ parent: Tools
 date: 2020-04-13
 ---
 
-## Zsh
-
-- [How to Install ZSH Shell on Ubuntu 18.04 LTS](https://linuxhint.com/install_zsh_shell_ubuntu_1804/)
-
 ## aliases
 
 ```bash

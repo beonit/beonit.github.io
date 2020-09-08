@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Effective unit testing
-nav_order: 3
+parent: Book
+nav_order: 1
 has_children: true
-permalink: /docs/effective-testing
 ---
 
 # Effective testing

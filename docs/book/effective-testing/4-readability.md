@@ -2,6 +2,7 @@
 layout: default
 title: 가독성
 parent: Effective unit testing
+grand_parent: Book
 nav_order: 4
 ---
 

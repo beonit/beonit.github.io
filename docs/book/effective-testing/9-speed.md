@@ -2,6 +2,7 @@
 layout: default
 title: 빌드/테스트 속도 빠르게 하기
 parent: Effective unit testing
+grand_parent: Book
 nav_order: 9
 ---
 

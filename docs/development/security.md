@@ -24,7 +24,7 @@ date: 2020-09-02
   - API Authentication
   - 생체인증
 
-### Authorization (AuthN)
+### Authorization (AuthZ)
 
 - 시스템 리소스에 대한 액세스 수준을 결정하는 데 사용되는 보안 메커니즘
 - Authorization Technique : JSON 웹 토큰, SAML, OpenID 권한 부여, 0Auth

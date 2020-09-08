@@ -2,6 +2,7 @@
 layout: default
 title: 좋은 테스트란 무엇인가?
 parent: Effective unit testing
+grand_parent: Book
 nav_order: 2
 ---
 

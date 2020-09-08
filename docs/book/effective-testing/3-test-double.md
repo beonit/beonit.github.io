@@ -2,6 +2,7 @@
 layout: default
 title: 테스트 더블
 parent: Effective unit testing
+grand_parent: Book
 nav_order: 3
 ---
 

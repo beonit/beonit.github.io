@@ -2,6 +2,7 @@
 layout: default
 title: 제2의 JVM 언어
 parent: Effective unit testing
+grand_parent: Book
 nav_order: 8
 ---
 

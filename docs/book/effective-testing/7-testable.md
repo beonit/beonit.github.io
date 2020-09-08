@@ -2,6 +2,7 @@
 layout: default
 title: 테스트 가능 설계
 parent: Effective unit testing
+grand_parent: Book
 nav_order: 7
 ---
 

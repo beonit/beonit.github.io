@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Android
-parent: Test
+parent: Testing
 date: 2020-05-18
 nav_order: 5
 ---

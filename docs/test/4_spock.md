@@ -1,49 +1,51 @@
 ---
 layout: default
 title: Spock
-parent: Test
+parent: Testing
 date: 2020-05-18
 nav_order: 4
 ---
 
 ## Spock
 
-gradle setup
+### gradle setup
 
-    buildscript {
-        dependencies {
-            // Spock : https://github.com/groovy/groovy-android-gradle-plugin
-            classpath 'org.codehaus.groovy:groovy-android-gradle-plugin:2.0.1'
-        }
-    }
-
-    subprojects {
-        apply plugin: 'groovyx.android'
-    }
-
+```groovy
+buildscript {
     dependencies {
-        testImplementation 'org.codehaus.groovy:groovy-android-gradle-plugin:2.0.1'
-        testImplementation 'org.spockframework:spock-core:1.1-groovy-2.4-rc-2'
+        // Spock : https://github.com/groovy/groovy-android-gradle-plugin
+        classpath 'org.codehaus.groovy:groovy-android-gradle-plugin:2.0.1'
     }
+}
 
-simple test
+subprojects {
+    apply plugin: 'groovyx.android'
+}
 
-    package com.obplanner.data.converter
-    import spock.lang.Specification
-    import java.math.RoundingMode
+dependencies {
+    testImplementation 'org.codehaus.groovy:groovy-android-gradle-plugin:2.0.1'
+    testImplementation 'org.spockframework:spock-core:1.1-groovy-2.4-rc-2'
+}
+```
 
-    class SimpleSpock extends Specification {
-        def "Simple test"() {
-            given:
-            BigDecimal price = BigDecimal.valueOf(495)
-            when:
-            BigDecimal boundPrice = price.setScale(-1, RoundingMode.HALF_UP)
-            then:
-            boundPrice == 500
-        }
+### simple test
+
+```java
+package com.obplanner.data.converter
+import spock.lang.Specification
+import java.math.RoundingMode
+
+class SimpleSpock extends Specification {
+    def "Simple test"() {
+        given:
+        BigDecimal price = BigDecimal.valueOf(495)
+        when:
+        BigDecimal boundPrice = price.setScale(-1, RoundingMode.HALF_UP)
+        then:
+        boundPrice == 500
     }
-
-
+}
+```
 
 ### Spcok - 여러개의 값 테스트
 

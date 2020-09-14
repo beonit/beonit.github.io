@@ -10,6 +10,15 @@ parent: Problem Solving
 
 문제풀이 연습
 
+## print with format
+
+- 3.6 부터 가능
+
+```python
+print(f"P : {p}")
+print(f"I have {card.price}")
+```
+
 ## Python 유용한 라이브러리
 
 - ```sys.maxsize```

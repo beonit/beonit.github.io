@@ -43,6 +43,7 @@ sed -rn 's/^.*: \[([A-Za-z]+)\].*\(([0-9]+)ms\).*/\1\t\t\2/p' before.log
 
 - telnet : ```telnet HOSTNAME PORT```
 - scp : ```scp src dest```
+- netstat : ```netstat -plnt```
 
 ## archive
 

@@ -24,15 +24,15 @@ partition algorithm 은 Lumuto, hoare 두개의 방법이 존재한다. 최악�
 ```python
 import random
 
-def pivot(arr, left, right):
-    pivot = arr[right]
-    low = left
-    for i in range(left, right):
-        if arr[i] < pivot:
-            arr[low], arr[i] = arr[i], arr[low]
-            low += 1
-    arr[low], arr[right] = arr[right], arr[low]
-    return low
+def pivot(arr, lo, hi):
+    p = arr[hi]
+    i = lo
+    for j in range(lo, hi):
+        if arr[j] < p:
+            arr[i], arr[j] = arr[j], arr[i]
+            i += 1
+    arr[i], arr[hi] = arr[hi], arr[i]
+    return i
 
 def qsort(arr, left, right):
     mid = pivot(arr, left, right)

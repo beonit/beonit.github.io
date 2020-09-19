@@ -8,12 +8,16 @@ date: 2020-02-01
 
 {{page.date}}
 
-# Heap
+## Heap
 
-heap 의 사전적 의미는 더미 라는 뜻이다. 대충 쌓아 올린다는 뜻이다. 그런데 꺼내는건 쉽지 않다.
-heap push 와 pop 을 간단하게 구현했다. 인터넷에 거창한 구현들이 많다. 다들 너무 거창하고 주석도 너무 자세하다.
-min heap 의 간단한 구현체다. 이 구현은 0번 인덱스 까지 사용한다. 그래서 parent 를 계산하는 식이 조금 다를 수 있다.
+- heap 의 사전적 의미는 더미 라는 뜻이다. 대충 쌓아 올린다는 뜻이다.
+- push : 마지막 요소 (오른쪽 아래) 에 값을 넣고 parent 와 비교하여 바꿔치기 하며 올라온다.
+- pop : 맨 위를 빼내고, 마지막 요소 (오른쪽 아래) 를 맨 위로 올린다. 비교하며 내려간다.
 
+## 구현
+
+- heap push 와 pop 을 간단하게 구현했다. 인터넷에 거창한 구현들이 많다. 다들 너무 거창하고 주석도 너무 자세하다.
+- min heap 의 간단한 구현체다. 이 구현은 0번 인덱스 까지 사용한다. 그래서 parent 를 계산하는 식이 조금 다를 수 있다.
 
 ```python
 import random
@@ -56,7 +60,6 @@ for _ in range(1000):
         sortedArr.append(heapPop(heapArr))
     assert sorted(arr) == sortedArr
 ```
-
 
 ## python heapq
 

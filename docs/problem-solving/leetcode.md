@@ -65,6 +65,15 @@ random.randrange(a, b) # a <= N < b
 random.randint(a, b) # a <= N <= b
 ```
 
+- deque
+
+```python
+from collections import deque
+queue = deque("0")
+queue.append("1")
+queue.popleft() # 1
+```
+
 ## Python 연산자의 시간 복잡도
 
 - [Complexity of Python Operations](https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt)

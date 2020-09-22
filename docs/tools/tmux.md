@@ -56,11 +56,10 @@ Resizing panes:
     C-b C-up, C-b C-down, C-b C-left, C-b C-right
                    resize by 1 row/column
 
-## Session save
-
-- [Restore tmux session after reboot](https://superuser.com/a/615716)
-  - `tmux-session save`, `tmux-session restore`
-
 ## Start shell with tmux
 
-- [Start with tmux](https://unix.stackexchange.com/a/306165)
+```
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+```
+
+출처 : [Start with tmux](https://unix.stackexchange.com/a/306165)

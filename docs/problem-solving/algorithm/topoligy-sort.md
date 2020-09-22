@@ -26,4 +26,6 @@ Algorithm: Steps involved in finding the topological ordering of a DAG:
 
 ## 참고 문제
 
-[leetcode/course-schedule-ii]({% /docs/leetcode/course-schedule-ii  %})
+- [leetcode/course-schedule-ii](https://leetcode.com/problems/course-schedule-ii/)
+
+

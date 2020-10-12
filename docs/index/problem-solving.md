@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Problem Solving
-nav_order: 4
 has_children: true
 permalink: /docs/problem-solving
 ---

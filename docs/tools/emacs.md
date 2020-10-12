@@ -30,10 +30,30 @@ Best editor in the world.
 - Kotlin vo to spock test : `(replace-regexp "\\(val\\|var\\) \\(.*\\):.*" "vo1.\\2 == vo2.\\2")`
 - 두개 그룹의 순서 바꾸기 : `(replace-regexp "\\(.*\\)\t\\(.*\\)" "\\2\t\\1")`
 
+## 한글
+
+- [Emacs 에서 한글 사용](https://m.blog.naver.com/jodi999/221256569685)
+
+1. ibus 가 emacs 에서 동작 하지 않도록 하기 위한 설정 `~/.Xresources`
+
+```
+Exec=env XMODIFIERS= emacs %F
+```
+
+2. 설정 로드 : `xrdb ~/.Xresources`
+3. .emacs
+
+```
+(setq default-input-method "korean-hangul")
+(global-set-key (kbd "S-SPC") 'toggle-input-method)
+```
+
+
 ## Tramp
 
 - emacs 의 tramp 는 파일을 모두 다운받고 업로드 하는 방식이라 대용량의 로그 파일을 확인하는데 불편함이 많다.
 - `/sudo::` : 루트 모드로 파일 접근하기
+- `/ssh:dev:/` : ssh 로 remote 접속
 
 ## .emacs
 
@@ -105,9 +125,12 @@ Best editor in the world.
 
 (load-theme 'zenburn t)
 
-;; /usr/share/applications/emacs.desktop
-;; Exec=env XMODIFIERS= emacs %F
-
+;; Font
 (add-to-list 'default-frame-alist '(font . "Monaco-10"))
 (set-fontset-font t 'hangul (font-spec :name "NanumGothicCoding"))
+
+;; Hangul
+(custom-set-variables
+ '(default-input-method "korean-hangul"))
+(global-set-key (kbd "S-SPC") 'toggle-input-method)
 ```

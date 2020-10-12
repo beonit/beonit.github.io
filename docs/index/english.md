@@ -1,7 +1,6 @@
 ---
 layout: default
-nav_order: 3
-title: Book
+title: English
 has_children: true
 ---
 

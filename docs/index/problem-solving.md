@@ -22,6 +22,11 @@ permalink: /docs/problem-solving
 - a 의 ascii 값 : 97
 
 - Min/Max value
+
+```python
+sys.maxsize
+```
+
 ```java
 Integer.MAX_VALUE =  2147483647
 Integer.MIN_VALUE = -2147483648

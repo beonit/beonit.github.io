@@ -19,9 +19,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://beonit.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
-<<<<<<< HEAD
-exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile", "vendor"]
-=======
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
 , "docs/tests/"
 ]
@@ -31,7 +28,6 @@ exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "pac
 # To include them, comment-out the relevant line above.
 # Uncommenting the following line doesn't work - see https://github.com/jekyll/jekyll/issues/4791
 # include: ["docs/tests/"]
->>>>>>> v0.3.3
 
 # Set a path/url to a logo that will be displayed instead of the title
 #logo: "/assets/images/just-the-docs.png"
